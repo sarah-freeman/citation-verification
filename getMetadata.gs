@@ -7,7 +7,7 @@
  */
 function getDOIMetadata(doi) {
   if (!doi) {
-    return false; // Handle empty DOI
+    return ''; // Handle empty DOI
   }
 
   Logger.log('DOI: ' + doi);

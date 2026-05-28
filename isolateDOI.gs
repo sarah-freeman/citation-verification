@@ -7,7 +7,7 @@
  */
 function isolateDOI(citation) {
   if (!citation) {
-    return false;  // Handle empty citation
+    return '';  // Handle empty citation
   }
 
   Logger.log('Citation ' + citation);
@@ -21,7 +21,7 @@ for (let i = 0; i < 2; i++) {
   let doiLink = doiLinks[i];
   if (citation.toLowerCase().indexOf(doiLink) > -1) {
     // Isolate the DOI
-    let isolatedDOI = citation.toLowerCase().split(doiLink)[1].trim();
+    let isolatedDOI = citation.toLowerCase().split(doiLink)[1].trim().split(' ')[0].trim();
 
     // If there's a period, comma, or whitespace at the end, remove it
     while (isolatedDOI.charAt(isolatedDOI.length - 1) == "," | isolatedDOI.charAt(isolatedDOI.length - 1) == ".") {

@@ -7,7 +7,7 @@
  */
 function isValidDOI(doi) {
   if (!doi) {
-    return false; // Handle empty DOI
+    return ''; // Handle empty DOI
   }
 
   const apiUrl = `https://doi.org/api/handles/${doi}`;
